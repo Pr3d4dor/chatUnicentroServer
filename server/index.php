@@ -52,24 +52,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 					$senhaNova = $dados->senhaNova;
 					$senhAntiga = $dados->senhAntiga;
 
-					echo $userService.jsonResult($login, $senhaNova, $senhAntiga);
+					echo $userService->jsonResult($login, $senhaNova, $senhAntiga);
 				}
 				else {
 					echo $userService->jsonResult("Falha", "Parametro(s) invalido(s)");
 				}
 			}
 			else {
-				echo $userService.jsonResult("Falha", "Parametro(s) invalido(s)");
+				echo $userService->jsonResult("Falha", "Parametro(s) invalido(s)");
 			}
 		}
 		else {
-			echo $userService.jsonResult("Falha", "Parametro(s) vazio(s)");
+			echo $userService->jsonResult("Falha", "Parametro(s) vazio(s)");
 		}
 	}
 	else {
-		echo $userService.jsonResult("Falha", "Parametro(s) invalido(s)");
+		echo $userService->jsonResult("Falha", "Parametro(s) invalido(s)");
 	}
 }
 else if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-	echo $userService.jsonResult("Falha", "Passagem de parametros via GET nao suportada");
+	echo $userService->jsonResult("Falha", "Passagem de parametros via GET nao suportada");
 }
