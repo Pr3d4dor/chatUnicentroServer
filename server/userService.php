@@ -7,7 +7,7 @@ class userService {
 	private $dbService;
 
 	function __construct() {
-		$this->$dbService = new dbService();
+		$this->dbService = new dbService();
 	}
 
 	function cadastrarUsuario($login, $email, $senha) {
