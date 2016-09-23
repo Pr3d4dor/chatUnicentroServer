@@ -15,7 +15,12 @@ class dbService {
 		$this->host = getenv('IP');
 		$this->usuario = getenv('C9_USER');
 
-		$this -> con = new PDO("mysql:host=".$this -> host.";dbname=".$this -> db, $this -> usuario, $this -> senha) or die("Erro na conexão com o banco de dados!");
+		try{
+			$this -> con = new PDO("mysql:host=".$this -> host.";dbname=".$this -> db, $this -> usuario, $this -> senha);
+		}
+		catch(PDOException $e) {
+        	echo "Erro: " . $e->getMessage();
+    	}
 	}
 
 	// Método que insere um usuário no banco de dados e retorna true se conseguiu e false caso contrário
