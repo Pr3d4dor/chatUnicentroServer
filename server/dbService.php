@@ -79,8 +79,8 @@ class dbService {
 		$sql = "UPDATE usuarios SET senha = :senha WHERE login = :login";
 		$query = $this->$con->prepare($sql);
 
-		$query->execute(array('login' => $login),
-							  'senha' => $senha);
+		$query->execute(array('login' => $login, 
+			                  'senha' => $senha);
 
 		if($query) {
 			return true;
