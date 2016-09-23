@@ -48,7 +48,7 @@ class userService {
 
 	public function alterarSenha($login, $senha, $senhaAntiga) {
 		if (!empty($login) && !empty($senha)) { 
-			if (!dbService->verificaSenha($login, $senha)) {
+			if (!$dbService->verificaSenha($login, $senha)) {
 				return jsonResult("Falha", "Senha antiga incorreta");
 			}
 			else {
@@ -78,5 +78,4 @@ class userService {
 
 		return json_encode($resposta);
 	}
-
 }
