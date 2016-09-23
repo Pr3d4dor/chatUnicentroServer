@@ -80,7 +80,7 @@ class dbService {
 		$query = $this->$con->prepare($sql);
 
 		$query->execute(array('login' => $login, 
-			                  'senha' => $senha);
+			                  'senha' => $senha));
 
 		if($query) {
 			return true;
