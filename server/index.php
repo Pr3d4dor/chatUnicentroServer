@@ -50,9 +50,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 					$usuario = $dados->usuario;
 					$login = $dados->login;
 					$senhaNova = $dados->senhaNova;
-					$senhAntiga = $dados->senhAntiga;
+					$senhaAntiga = $dados->senhaAntiga;
 
-					echo $userService->jsonResult($login, $senhaNova, $senhAntiga);
+					echo $userService->jsonResult($login, $senhaNova, $senhaAntiga);
 				}
 				else {
 					echo $userService->jsonResult("Falha", "Parametro(s) invalido(s)");
