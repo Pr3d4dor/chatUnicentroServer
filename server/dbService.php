@@ -5,13 +5,16 @@ require_once("bcrypt.php"); // Necessário para fazer a criptografia e checagem 
 class dbService {
 
 	// Parâmetros de configuração
-	private $host = getenv('IP');
-	private $usuario = getenv('C9_USER');
+	private $host;
+	private $usuario;
 	private $db = 'chatServer';
 	private $senha = '123';
 	private $con;
 
 	public function __construct() {
+		$this->$host = getenv('IP');
+		$this->$usuario = getenv('C9_USER');
+
 		$this -> con = new PDO("mysql:host=".$this -> host.";dbname=".$this -> db, $this -> usuario, $this -> senha) or die("Erro na conexão com o banco de dados!");
 	}
 
