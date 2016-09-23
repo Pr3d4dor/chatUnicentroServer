@@ -12,8 +12,8 @@ class dbService {
 	private $con;
 
 	public function __construct() {
-		$this->$host = getenv('IP');
-		$this->$usuario = getenv('C9_USER');
+		$this->host = getenv('IP');
+		$this->usuario = getenv('C9_USER');
 
 		$this -> con = new PDO("mysql:host=".$this -> host.";dbname=".$this -> db, $this -> usuario, $this -> senha) or die("Erro na conexão com o banco de dados!");
 	}
