@@ -9,4 +9,4 @@
 - Universidade Estadual do Centro-Oeste.
 - Professor: Tony Alexander Hild.
 - Materia: Sistemas Distribuidos.
-- Este repositório é parte do servidor do chat (WebService).
+- Este repositório é o servidor do chat (WebService).
