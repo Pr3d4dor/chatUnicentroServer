@@ -39,16 +39,16 @@
             if (isset($_POST['login']) && isset($_POST['senha'])) {
                 
                 // Guardar em variaveis mais legiveis o login e senha
-                $login = $_POST['acao'];
+                $login = $_POST['login'];
                 $senha = $_POST['senha'];
                  
                 // Validar login e senha
                 $conn = $db->connect();
                 $stmt = $conn->prepare("SELECT login, senha FROM usuarios WHERE login = :login LIMIT 1");
                 $stmt->execute(array('login' => $login));
-                $resultado = $stmt->fetch();
+                $row = $stmt->fetch();
                  
-                if (is_array($resultado) && Bcrypt::check($senha, $resultado['senha'])) {
+                if (is_array($row) && Bcrypt::check($senha, $row['senha'])) {
                     $resultado['resultado'] = "Sucesso";
                     $resultado['mensagem'] = "Login e senha corretos";
                 }
