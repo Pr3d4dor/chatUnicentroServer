@@ -55,11 +55,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 					echo $userService->jsonResult($login, $senhaNova, $senhaAntiga);
 				}
 				else {
-					echo $userService->jsonResult("Falha", "Parametro(s) invalido(s)");
+					echo $userService->jsonResult("Falha", "Parametro(s) invalido(s) 3");
 				}
 			}
 			else {
-				echo $userService->jsonResult("Falha", "Parametro(s) invalido(s)");
+				echo $userService->jsonResult("Falha", "Parametro(s) invalido(s) 2");
 			}
 		}
 		else {
@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		}
 	}
 	else {
-		echo $userService->jsonResult("Falha", "Parametro(s) invalido(s)");
+		echo $userService->jsonResult("Falha", "Parametro(s) invalido(s) 1");
 	}
 }
 else if ($_SERVER['REQUEST_METHOD'] == 'GET') {
