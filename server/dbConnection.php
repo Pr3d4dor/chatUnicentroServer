@@ -27,12 +27,16 @@ class dbConnection {
 		
 		// Conectando com o banco de dados
 		try {
-            $this->conn = new PDO("mysql:host=DB_HOST;dbname=DB_DATABASE", DB_USUARIO, DB_SENHA);
+            $this->conn = new PDO("mysql:host=". DB_HOST . ";" . "dbname=" . DB_DATABASE, DB_USUARIO, DB_SENHA);
+            
             // Setar o PDO para o modo de erro exception
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            // Desativar modo emulado de querys para evitar injeção de sql de segunda ordem.
+            $this->conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         }
         catch(PDOException $e) {
-            echo "Erro na conexão com o baco de dados: " . $e->getMessage();
+            echo "Erro na conexao com o baco de dados: " . $e->getMessage();
         }
 		
 		// Retornar o objeto da conexão
