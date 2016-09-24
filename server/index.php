@@ -2,4 +2,4 @@
 
 include("dbConnection.php");
 
-$conn = new dbConnection().connect(); 
+$conn = new dbConnection()->connect(); 
